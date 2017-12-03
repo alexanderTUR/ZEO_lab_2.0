@@ -1,0 +1,216 @@
+@import "vars"
+@import "_mixins/helpers"
+
+#container
+  display: flex
+  flex-direction: column
+  padding-bottom: 110px
+  background-image: linear-gradient( -90deg, rgb(255,80,46) 0%, rgb(207,39,15) 100%)
+
+.square
+  position: absolute
+
+.square.first
+  width: 14px
+  height: 14px
+  left: 44%
+  top: 45px
+  background-color: rgb(236, 236, 236)
+  box-shadow: 0 0 24px 0 rgba(148, 27, 9, 0.3)
+
+.square.second
+  width: 46px
+  height: 46px
+  right: 4%
+  top: 44%
+  background-color: rgb(241, 60, 35)
+  box-shadow: 0 0 24px 0 rgba(162, 33, 13, 0.45)
+
+.square.third
+  width: 46px
+  height: 46px
+  bottom: 40%
+  left: 5%
+  background-color: rgb(207, 39, 16)
+  box-shadow: 0 0 24px 0 rgba(162, 33, 13, 0.45)
+
+.square.fourth
+  width: 24px
+  height: 24px
+  right: 15%
+  bottom: 20%
+  background-color: rgb(225, 45, 19)
+  box-shadow: 0 0 24px 0 rgba(162, 33, 13, 0.45)
+  +media-width-max(640)
+    bottom: 23%
+
+
+.square.fifth
+  width: 46px
+  height: 46px
+  left: 22%
+  bottom: 8%
+  background-color: rgb(225, 45, 19)
+  box-shadow: 0 0 24px 0 rgba(162, 33, 13, 0.45)
+  +media-width-max(1024)
+    left: 10%
+  +media-width-max(640)
+    bottom: 2%
+
+.main-container
+  max-width: 1344px
+  margin: 70px auto
+
+.main-inner
+  display: flex
+  position: relative
+  padding: 70px 110px 0 0
+  +media-width-max(768)
+    padding-right: 0
+  +media-width-max(640)
+    flex-direction: column
+
+.logo-block
+  position: absolute
+  display: flex
+  width: 224px
+  height: 224px
+  top: 0
+  right: 0
+  background-color: rgb(221, 51, 25)
+  box-shadow: 0 0 70px 0 rgba(162, 33, 13, 0.66)
+  +media-width-max(768)
+    width: 150px
+    height: 150px
+
+.logo-container
+  width: 124px
+  height: 48px
+  margin: auto
+  svg
+    +img
+
+.red-square
+  position: absolute
+  width: 91px
+  height: 91px
+  top: 0
+  left: 7%
+  background-color: rgb(252, 77, 44)
+  box-shadow: 0 0 24px 0 rgba(162, 33, 13, 0.3)
+
+.white-block
+  display: flex
+  width: 40%
+  height: 586px
+  background-color: rgb(239, 239, 239)
+  box-shadow: 0 0 70px 0 rgba(171, 28, 7, 0.3)
+  +media-width-max(640)
+    width: 100%
+    height: 300px
+    order: 2
+
+.black-block
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  width: 60%
+  height: 586px
+  +light-font
+  background-color: rgb(33, 33, 33)
+  box-shadow: 0 0 95px 0 rgba(19, 19, 19, 0.3)
+  +media-width-max(640)
+    width: 100%
+    order: 1
+
+.white-block-text
+  margin: auto
+  padding: 0 20%
+  font-size: 16px
+  +light-font
+  line-height: 2
+  color: rgb(33, 33, 33)
+  +media-width-max(1024)
+    padding-left: 5%
+    padding-right: 5%
+  .block-title
+    +semi-bold-font
+    font-size: 24px
+    color: rgb(243, 73, 42)
+
+.figure-wrapper
+  img
+    +img
+
+.figure-title
+  margin-top: -24px
+  letter-spacing: 3px
+  font-size: 25px
+  line-height: 1.333
+  color: rgb(239, 239, 239)
+
+.figure-subtitle
+  letter-spacing: 8px
+  font-size: 21px
+  line-height: 1.6
+  color: rgb(241, 68, 37)
+
+.mail-collector
+  max-width: 500px
+  margin: 0 auto
+  color: $white-color
+  line-height: 1.8
+  +media-width-max(768)
+    padding-left: 5%
+    padding-right: 5%
+
+.form-title
+  font-size: 24px
+
+.form-subtitle
+  +light-font
+  display: inline-block
+  font-size: 16px
+  margin-bottom: 16px
+
+.input-container
+  display: flex
+  justify-content: space-between
+  align-items: center
+  width: 100%
+  height: 75px
+  padding: 0 8%
+  background-color: rgb(218, 218, 218)
+  box-shadow: 0 0 24px 0 rgba(148, 27, 9, 0.3)
+  +media-width-max(640)
+    padding: 0 10px
+  label
+    padding-right: 20px
+    flex-shrink: 0
+    +light-font
+    font-size: 16px
+    line-height: 2
+    color: rgb(33, 33, 33)
+    +media-width-max(640)
+      padding-right: 5px
+  input
+    +regular-font
+    flex: 1
+    outline: none
+    border: none
+    font-size: 18px
+    color: rgb(33, 33, 33)
+    background-color: transparent
+  button
+    margin: 0
+    padding: 0 0 0 20px
+    border-radius: 0
+    flex-shrink: 0
+    border: none
+    outline: none
+    background-color: transparent
+    +media-width-max(640)
+      padding-left: 5px
+    img
+      +img

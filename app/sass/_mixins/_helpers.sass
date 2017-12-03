@@ -1,0 +1,52 @@
+= regular-font
+  font-family: 'Open Sans', sans-serif
+  font-weight: normal
+
+= light-font
+  font-weight: 300
+
+= semi-bold-font
+  font-weight: 600
+
+= clearfix
+  &:after
+    content: ""
+    display: table
+    clear: both
+
+= section-container
+  max-width: 1400px
+  margin: 0 auto
+
+= img
+  display: block
+  width: 100%
+  height: auto
+
+= scale-in($scale)
+  transition-property: transform
+  transition-duration: .2s
+  transform: scale($scale) translateZ(0)
+  transition-timing-function: ease-out
+
+= scale-out($scale)
+  transition-property: transform
+  transition-duration: .1s
+  transform: scale($scale) translateZ(0)
+  transition-timing-function: ease-out
+
+=media-width-max($width)
+  @media only screen and (max-width: $width+ "px")
+    @content
+
+=media-width-min($width)
+  @media only screen and (min-width: $width+ "px")
+    @content
+
+=media-height-max($height)
+  @media only screen and (max-height: $height + "px")
+    @content
+
+=media-height-min($height)
+  @media only screen and (min-height: $height + "px")
+    @content
