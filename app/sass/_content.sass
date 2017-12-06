@@ -59,7 +59,6 @@
 .main-container
   max-width: 1344px
   margin: 70px auto
-  //overflow: hidden
 
 .main-inner
   display: flex
@@ -100,6 +99,7 @@
   left: 7%
   background-color: rgb(252, 77, 44)
   box-shadow: 0 0 24px 0 rgba(162, 33, 13, 0.3)
+  -webkit-transform: translate3d(0, 0, 0)
 
 .white-block
   display: flex
@@ -140,6 +140,11 @@
     +semi-bold-font
     font-size: 24px
     color: rgb(243, 73, 42)
+
+.block-text
+  -webkit-backface-visibility: hidden
+  -webkit-transform-style: preserve-3d
+  -webkit-transform: translate3d(0, 0, 0)
     
 .facebook-link
   color: rgb(0, 51, 204)
