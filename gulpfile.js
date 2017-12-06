@@ -22,10 +22,10 @@ gulp.task('common-js', function() {
 gulp.task('js', ['common-js'], function() {
 	return gulp.src([
 		'app/libs/jquery/jquery.min.js',
-		// 'app/libs/greensock/TweenLite.min.js',
-		// 'app/libs/greensock/TimelineLite.min.js',
-		// 'app/libs/greensock/plugins/CSSPlugin.min.js',
-		// 'app/libs/parallax/parallax.min.js',
+		'app/libs/greensock/TweenLite.min.js',
+		'app/libs/greensock/TimelineLite.min.js',
+		'app/libs/greensock/plugins/CSSPlugin.min.js',
+		'app/libs/validate/validate.js',
 		'app/js/common.min.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
@@ -65,6 +65,10 @@ gulp.task('watch', ['sass', 'js', 'browser-sync'], function() {
 gulp.task('build', ['removebuild', 'sass', 'js'], function() {
 	var buildFiles = gulp.src([
 		'app/*.html',
+		]).pipe(gulp.dest('build'));
+
+	var buildFiles = gulp.src([
+		'app/*.php',
 	]).pipe(gulp.dest('build'));
 
 	var buildCss = gulp.src([

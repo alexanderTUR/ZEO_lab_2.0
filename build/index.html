@@ -55,13 +55,13 @@
             </div>
         </div>
     </div>
-    <form action="" class="mail-collector" name="mail">
+    <form action="send.php" class="mail-collector" method="post" data-validate>
         <h2 class="form-title">Leave your email</h2>
         <span class="form-subtitle">and we will let you know when application to ZEO Lab will open!</span>
         <div class="input-container">
             <label for="mail">E-mail</label>
-            <input type="email" name="mail" id="mail" required>
-            <button type="submit"><img src="img/button.png" alt="Send mail"></button>
+            <input type="email" name="mail" id="mail" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" required>
+            <button type="submit" id="submit"><img src="img/button.png" alt="Send mail"></button>
         </div>
     </form>
     <script src="js/scripts.min.js"></script>

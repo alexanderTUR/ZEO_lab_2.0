@@ -44,7 +44,6 @@
   +media-width-max(640)
     bottom: 23%
 
-
 .square.fifth
   width: 46px
   height: 46px
@@ -58,10 +57,13 @@
     bottom: 2%
 
 .main-container
+  //width: 100%
   max-width: 1344px
   margin: 70px auto
+  //overflow: hidden
 
 .main-inner
+  //overflow-x: auto
   display: flex
   position: relative
   padding: 70px 110px 0 0
@@ -71,6 +73,7 @@
     flex-direction: column
 
 .logo-block
+  z-index: 10
   position: absolute
   display: flex
   width: 224px
@@ -91,6 +94,7 @@
     +img
 
 .red-square
+  z-index: 10
   position: absolute
   width: 91px
   height: 91px
@@ -175,6 +179,7 @@
   margin-bottom: 16px
 
 .input-container
+  position: relative
   display: flex
   justify-content: space-between
   align-items: center
@@ -183,6 +188,7 @@
   padding: 0 8%
   background-color: rgb(218, 218, 218)
   box-shadow: 0 0 24px 0 rgba(148, 27, 9, 0.3)
+  transition: all .2s linear
   +media-width-max(640)
     padding: 0 10px
   label
@@ -203,14 +209,35 @@
     color: rgb(33, 33, 33)
     background-color: transparent
   button
-    margin: 0
-    padding: 0 0 0 20px
+    margin: 0 0 0 20px
+    padding: 0
     border-radius: 0
     flex-shrink: 0
     border: none
     outline: none
     background-color: transparent
+    cursor: pointer
+    +scale-out(1)
     +media-width-max(640)
       padding-left: 5px
+    &:hover
+      +scale-in(1.1)
     img
       +img
+
+.error-message
+  position: absolute
+  width: 100%
+  left: 0
+  bottom: 0
+  color: rgb(241, 68, 37)
+  text-align: center
+  +semi-bold-font
+  font-size: 14px
+
+.success-container
+  width: 100%
+  text-align: center
+  font-size: 18px
+  +semi-bold-font
+  color: rgb(33, 33, 33)
