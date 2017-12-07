@@ -47,11 +47,13 @@ $(function() {
 			messagePatternMismatch: 'Please enter correct mail.',
 			disableSubmit: true,
 			onSubmit: function () {
-				$("form").trigger("reset");
-				$("#mail").css('display', 'none');
-				$("#submit").css('display', 'none');
-				$(".input-container>label").css('display', 'none');
-				$(".input-container").append("<div class='success-container'><p class='onsuccess'>Thanks for your response!</p></div>");
+				setTimeout(function(){
+					$("form").trigger("reset");
+					$("#mail").css('display', 'none');
+					$("#submit").css('display', 'none');
+					$(".input-container>label").css('display', 'none');
+					$(".input-container").append("<div class='success-container'><p class='onsuccess'>Thanks for your response!</p></div>");
+				}, 500);
 			}
 		});
 		$(".mail-collector").submit(function(e) { //устанавливаем событие отправки для формы
