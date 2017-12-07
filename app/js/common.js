@@ -3,6 +3,9 @@ $(function() {
 	// Smooth loading
 	$('body').removeClass('loading');
 
+	// Hide browser menu
+	window.scrollTo(0, 1);
+
 	// Functions init
 	formValidate();
 	if ($(window).width() >= 768) {
