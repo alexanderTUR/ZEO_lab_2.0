@@ -5,7 +5,24 @@
   display: flex
   flex-direction: column
   padding-bottom: 110px
-  background-image: linear-gradient( -90deg, rgb(255,80,46) 0%, rgb(207,39,15) 100%)
+  background: url("../img/ZeoLab2_0-bg.png") no-repeat center center fixed
+  background-size: cover
+
+#dom_overlay_container
+  display: none
+
+#animation_container
+  +media-width-max(768)
+    width: 100% !important
+    padding-top: 100%
+    position: relative
+
+#canvas
+  +media-width-max(768)
+    width: 100% !important
+    height: 100% !important
+    position: absolute
+    top: 0
 
 .square
   position: absolute
@@ -64,7 +81,7 @@
   display: flex
   position: relative
   padding: 70px 110px 0 0
-  +media-width-max(768)
+  +media-width-max(1024)
     padding-right: 0
   +media-width-max(640)
     flex-direction: column
@@ -79,7 +96,7 @@
   right: 0
   background-color: rgb(221, 51, 25)
   box-shadow: 0 0 70px 0 rgba(162, 33, 13, 0.66)
-  +media-width-max(768)
+  +media-width-max(1024)
     width: 150px
     height: 150px
 
@@ -107,10 +124,16 @@
   height: 586px
   background-color: rgb(239, 239, 239)
   box-shadow: 0 0 70px 0 rgba(171, 28, 7, 0.3)
+  +media-width-max(768)
+    height: 550px
   +media-width-max(640)
     width: 100%
     height: 300px
     order: 2
+  +media-width-max(425)
+    height: auto
+    padding-top: 80px
+    padding-bottom: 80px
 
 .black-block
   display: flex
@@ -122,6 +145,8 @@
   +light-font
   background-color: rgb(33, 33, 33)
   box-shadow: 0 0 95px 0 rgba(19, 19, 19, 0.3)
+  +media-width-max(768)
+    height: 550px
   +media-width-max(640)
     width: 100%
     order: 1
@@ -152,23 +177,6 @@
   &:hover
     text-decoration: underline
 
-.figure-wrapper
-  img
-    +img
-
-.figure-title
-  margin-top: -24px
-  letter-spacing: 3px
-  font-size: 25px
-  line-height: 1.333
-  color: rgb(239, 239, 239)
-
-.figure-subtitle
-  letter-spacing: 8px
-  font-size: 21px
-  line-height: 1.6
-  color: rgb(241, 68, 37)
-
 .mail-collector
   max-width: 500px
   margin: 0 auto
@@ -195,7 +203,7 @@
   width: 100%
   height: 75px
   padding: 0 8%
-  background-color: rgb(218, 218, 218)
+  background-color: rgb(239, 239, 239)
   box-shadow: 0 0 24px 0 rgba(148, 27, 9, 0.3)
   transition: all .2s linear
   +media-width-max(640)
@@ -225,6 +233,9 @@
       padding-left: 5px
       padding-right: 5px
   button
+    position: relative
+    width: 29px
+    height: 21px
     margin: 0 0 0 20px
     padding: 0
     border-radius: 0
@@ -233,14 +244,24 @@
     outline: none
     background-color: transparent
     cursor: pointer
-    +scale-out(1)
+    &:before
+      content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyOC41OSAyMS41NSI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7c3Ryb2tlOiNlZjQyMjM7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5ub3JtYWw8L3RpdGxlPjxnIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiPjxnIGlkPSJMYXllcl8xLTIiIGRhdGEtbmFtZT0iTGF5ZXIgMSI+PHJlY3QgY2xhc3M9ImNscy0xIiB4PSIwLjUiIHk9IjAuNSIgd2lkdGg9IjI3LjU5IiBoZWlnaHQ9IjIwLjU1IiByeD0iMTAuMjciIHJ5PSIxMC4yNyIvPjxwb2x5bGluZSBjbGFzcz0iY2xzLTEiIHBvaW50cz0iMTIuNzYgMTMuODQgMTUuODIgMTAuNzcgMTIuNzYgNy43MSIvPjwvZz48L2c+PC9zdmc+")
+    &:hover
+      &:before
+        content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNy41OSAyMC41NSI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNlZjQyMjM7fS5jbHMtMntmaWxsOm5vbmU7c3Ryb2tlOiNmZmY7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5ob3ZlcjwvdGl0bGU+PGcgaWQ9IkxheWVyXzIiIGRhdGEtbmFtZT0iTGF5ZXIgMiI+PGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj48cmVjdCBjbGFzcz0iY2xzLTEiIHdpZHRoPSIyNy41OSIgaGVpZ2h0PSIyMC41NSIgcng9IjEwLjI3IiByeT0iMTAuMjciLz48cG9seWxpbmUgY2xhc3M9ImNscy0yIiBwb2ludHM9IjEyLjI2IDEzLjM0IDE1LjMyIDEwLjI3IDEyLjI2IDcuMjEiLz48L2c+PC9nPjwvc3ZnPg==")
+        transition: all .5s
+    &:active
+      &:before
+        content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNy41OSAyMC41NSI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNjZDJlMjc7fS5jbHMtMntmaWxsOm5vbmU7c3Ryb2tlOiNmZmY7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5jbGlja2VkPC90aXRsZT48ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIj48ZyBpZD0iTGF5ZXJfMS0yIiBkYXRhLW5hbWU9IkxheWVyIDEiPjxyZWN0IGNsYXNzPSJjbHMtMSIgd2lkdGg9IjI3LjU5IiBoZWlnaHQ9IjIwLjU1IiByeD0iMTAuMjciIHJ5PSIxMC4yNyIvPjxwb2x5bGluZSBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMTIuMjYgMTMuMzQgMTUuMzIgMTAuMjcgMTIuMjYgNy4yMSIvPjwvZz48L2c+PC9zdmc+")
     +media-width-max(640)
       margin-left: 5px
     +media-width-max(425)
       margin-left: 0
     &:hover
-      +scale-in(1.1)
-    img
+      .submit-btn
+        fill: #ef4223
+        stroke: #fff
+    svg
       +img
 
 .error-message

@@ -10,9 +10,9 @@
     <meta property="og:title" content="ZEO Lab 2.0">
     <meta property="og:description" content="Join ZEO Lab - application period starts soon.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="!!!URL!!!">
+    <meta property="og:url" content="https://lab.zeoalliance.com">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="!!!URL!!!">
+    <meta name="twitter:site" content="https://lab.zeoalliance.com">
     <meta name="twitter:title" content="ZEO Lab 2.0">
     <meta name="twitter:description" content="Join ZEO Lab - application period starts soon.">
     <meta name="twitter:image" content="img/og-image.jpg">
@@ -47,23 +47,23 @@
                 </div>
             </div>
             <div class="black-block">
-                <div class="figure-wrapper">
-                    <img src="img/main_img.png" alt="" class="figure-img">
+                <div id="animation_container">
+                    <canvas id="canvas"></canvas>
+                    <div id="dom_overlay_container"></div>
                 </div>
-                <h1 class="figure-title">ZEO Lab 2.0</h1>
-                <span class="figure-subtitle">is coming!</span>
             </div>
         </div>
     </div>
-    <form action="send.php" class="mail-collector" method="post" data-validate>
+    <form action="http://formspree.io/info@zeouniversity.com" class="mail-collector" method="POST" data-validate>
         <h2 class="form-title">Leave your email</h2>
         <span class="form-subtitle">and we will let you know when application to ZEO Lab will open!</span>
         <div class="input-container">
             <label for="mail">E-mail</label>
             <input type="email" name="mail" id="mail" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" required>
-            <button type="submit" id="submit"><img src="img/button.png" alt="Send mail"></button>
+            <button type="submit" id="xsubmit"></button>
         </div>
     </form>
+    <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
     <script src="js/scripts.min.js"></script>
 </body>
 </html>

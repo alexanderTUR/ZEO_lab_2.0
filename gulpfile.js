@@ -26,6 +26,7 @@ gulp.task('js', ['common-js'], function() {
 		'app/libs/greensock/TimelineLite.min.js',
 		'app/libs/greensock/plugins/CSSPlugin.min.js',
 		'app/libs/validate/validate.js',
+		'app/libs/animationjs/ZEOlab-2.js',
 		'app/js/common.min.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
