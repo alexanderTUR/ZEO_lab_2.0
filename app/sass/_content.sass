@@ -11,19 +11,6 @@
 #dom_overlay_container
   display: none
 
-#animation_container
-  +media-width-max(768)
-    width: 100% !important
-    padding-top: 100%
-    position: relative
-
-#canvas
-  +media-width-max(768)
-    width: 100% !important
-    height: 100% !important
-    position: absolute
-    top: 0
-
 .square
   position: absolute
 
@@ -142,6 +129,7 @@
   align-items: center
   width: 60%
   height: 586px
+  overflow: hidden
   +light-font
   background-color: rgb(33, 33, 33)
   box-shadow: 0 0 95px 0 rgba(19, 19, 19, 0.3)
