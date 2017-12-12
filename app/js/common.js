@@ -9,7 +9,7 @@ $(function() {
 	// Functions init
 	formValidate();
 	initAnimation();
-	if ($(window).width() >= 768) {
+	if ($(window).width() > 1024) {
 		mainAnimation();
 	}
 

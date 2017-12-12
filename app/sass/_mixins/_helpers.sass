@@ -39,14 +39,6 @@
   @media only screen and (max-width: $width+ "px")
     @content
 
-=media-width-min($width)
-  @media only screen and (min-width: $width+ "px")
-    @content
-
-=media-height-max($height)
-  @media only screen and (max-height: $height + "px")
-    @content
-
-=media-height-min($height)
-  @media only screen and (min-height: $height + "px")
+=media-width-and-height($width, $height)
+  @media (max-height: $height + "px") and (max-width: $width+ "px")
     @content
