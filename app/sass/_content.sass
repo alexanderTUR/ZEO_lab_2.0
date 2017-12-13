@@ -4,11 +4,11 @@
 #container
   display: flex
   flex-direction: column
-  max-height: 100vh
+  //max-height: 100vh
   background: url("../img/ZeoLab2_0-bg.png") no-repeat center center fixed
   background-size: cover
   +media-width-max(768)
-    max-height: initial
+    //max-height: initial
 
 #dom_overlay_container
   display: none
@@ -167,6 +167,8 @@
     top: 0
   +media-width-max(1024)
     top: 15px
+  +media-width-and-height(812, 375)
+    top: -30px
   +media-width-max(640)
     top: -30px
 
@@ -176,10 +178,14 @@
   height: 60vh
   background-color: rgb(239, 239, 239)
   box-shadow: 0 0 70px 0 rgba(171, 28, 7, 0.3)
+  +media-width-and-height(1440, 750)
+    height: 60vh
   +media-width-max(1280)
     height: 65vh
   +media-width-max(1024)
     height: 62vh
+  +media-width-and-height(812, 375)
+    height: 370px
   +media-width-max(768)
     width: 100%
     height: 275px
@@ -190,8 +196,6 @@
     height: auto
     padding-top: 50px
     padding-bottom: 50px
-  +media-width-and-height(1440, 750)
-    height: 60vh
 
 .black-block
   display: flex
@@ -204,18 +208,20 @@
   +light-font
   background-color: rgb(33, 33, 33)
   box-shadow: 0 0 95px 0 rgba(19, 19, 19, 0.3)
+  +media-width-and-height(1440, 750)
+    height: 60vh
   +media-width-max(1280)
     height: 65vh
   +media-width-max(1024)
     height: 62vh
+  +media-width-and-height(812, 375)
+    height: 370px
   +media-width-max(768)
     height: 460px
     width: 100%
     order: 1
   +media-width-max(640)
     height: 520px
-  +media-width-and-height(1440, 750)
-    height: 60vh
 
 .white-block-text
   margin: auto
@@ -266,6 +272,8 @@
   margin: 0 auto
   color: $white-color
   line-height: 1.8
+  +media-width-and-height(812, 375)
+    padding-bottom: 50px
   +media-width-max(768)
     padding-bottom: 30px
   +media-width-max(540)
